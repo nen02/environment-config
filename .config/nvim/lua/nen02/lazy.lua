@@ -20,3 +20,4 @@ require("lazy").setup({ { import = "nen02.plugins" }, { import = "nen02.plugins.
     notify = false,
   },
 })
+
