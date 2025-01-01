@@ -21,3 +21,16 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
+-- Example: Map `Ctrl-h` to move left, `Ctrl-l` to move right in Insert Mode
+keymap.set("i", "<C-h>", "<Left>", { noremap = true, silent = true })
+keymap.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
+
+keymap.set("n", "<A-S-j>", "yyp", { noremap = true, silent = true, desc = "Duplicate line to next line" })
+keymap.set("n", "<Esc>K", "yypk", { noremap = true, silent = true, desc = "Duplicate line to previous line" })
+
+keymap.set(
+	"x",
+	"<A-S-j>",
+	":'<,'>t'><CR>",
+	{ noremap = true, silent = true, desc = "Duplicate selection to next line" }
+)

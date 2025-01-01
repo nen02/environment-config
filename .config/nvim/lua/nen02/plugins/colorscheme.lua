@@ -5,7 +5,7 @@ return {
 		config = function()
 			require("onedark").setup({
 				style = "dark", -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer'
-				transparent = true, -- Set this to true for a transparent background
+				transparent = false, -- Set this to true for a transparent background
 				term_colors = true, -- Set terminal colors
 				ending_tildes = false, -- Show end-of-buffer tildes
 

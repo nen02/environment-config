@@ -26,6 +26,10 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+
 # ------------------------ terminal ------------------------
 # fzf
 eval "$(fzf --zsh)"
@@ -83,9 +87,10 @@ eval $(thefuck --alias redo)
 
 # zoxide
 eval "$(zoxide init zsh)"
+alias cd="z"
 
 # zsh-autosuggestions
-alias cd="z"source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
