@@ -18,12 +18,13 @@ return {
 				enable = true,
 				update_root = true,
 			},
-			sync_root_with_cwd = true,
+			sync_root_with_cwd = true, -- Sync the root of nvim-tree with the current working directory
 			-- change folder arrow icons
 			renderer = {
 				indent_markers = {
 					enable = true,
 				},
+				group_empty = true, -- enable grouping of empty folders
 				icons = {
 					glyphs = {
 						folder = {
