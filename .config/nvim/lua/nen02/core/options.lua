@@ -1,6 +1,7 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
+local o = vim.o
 
 opt.relativenumber = true
 opt.number = true
@@ -30,3 +31,5 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
+o.updatetime = 1000 -- Reduce delay for CursorHold
+o.completeopt = "menuone,noselect"

@@ -34,3 +34,6 @@ keymap.set(
 	":'<,'>t'><CR>",
 	{ noremap = true, silent = true, desc = "Duplicate selection to next line" }
 )
+
+-- Example keymap for manual hover
+-- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
