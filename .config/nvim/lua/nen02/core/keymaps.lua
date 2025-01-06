@@ -35,5 +35,6 @@ keymap.set(
 	{ noremap = true, silent = true, desc = "Duplicate selection to next line" }
 )
 
--- Example keymap for manual hover
+-- open lsp definition
 -- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
