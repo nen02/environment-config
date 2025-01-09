@@ -15,7 +15,7 @@ return {
 			defaults = {
 				path_display = { "smart" },
 				defaults = {
-					file_ignore_patters = { "node_modules", "%.class" },
+					file_ignore_patters = { "node_modules", "%.class", "%.jar$" },
 				},
 				pickers = {
 					find_files = {
