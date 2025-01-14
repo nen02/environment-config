@@ -26,14 +26,7 @@ keymap.set("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 keymap.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
 keymap.set("n", "<A-S-j>", "yyp", { noremap = true, silent = true, desc = "Duplicate line to next line" })
-keymap.set("n", "<Esc>K", "yypk", { noremap = true, silent = true, desc = "Duplicate line to previous line" })
-
-keymap.set(
-	"x",
-	"<A-S-j>",
-	":'<,'>t'><CR>",
-	{ noremap = true, silent = true, desc = "Duplicate selection to next line" }
-)
+-- keymap.set("n", "<Esc>K", "yypk", { noremap = true, silent = true, desc = "Duplicate line to previous line" })
 
 -- open lsp definition
 -- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
