@@ -28,6 +28,15 @@ keymap.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 keymap.set("n", "<A-S-j>", "yyp", { noremap = true, silent = true, desc = "Duplicate line to next line" })
 -- keymap.set("n", "<Esc>K", "yypk", { noremap = true, silent = true, desc = "Duplicate line to previous line" })
 
+keymap.set(
+	"n",
+	"0",
+	"^",
+	{ noremap = true, silent = true, desc = "Go to the first non-whitespace character of the line" }
+)
+keymap.set("n", "9", "$", { noremap = true, silent = true, desc = "Go to the end of the line" })
+keymap.set("n", "^", "0", { noremap = true, silent = true, desc = "Go to the start of the line" })
+
 -- open lsp definition
 -- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
