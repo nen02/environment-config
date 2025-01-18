@@ -29,13 +29,13 @@ keymap.set("n", "<A-S-j>", "yyp", { noremap = true, silent = true, desc = "Dupli
 -- keymap.set("n", "<Esc>K", "yypk", { noremap = true, silent = true, desc = "Duplicate line to previous line" })
 
 keymap.set(
-	"n",
+	{ "n", "v" },
 	"0",
 	"^",
 	{ noremap = true, silent = true, desc = "Go to the first non-whitespace character of the line" }
 )
-keymap.set("n", "9", "$", { noremap = true, silent = true, desc = "Go to the end of the line" })
-keymap.set("n", "^", "0", { noremap = true, silent = true, desc = "Go to the start of the line" })
+keymap.set({ "n", "v" }, "-", "$", { noremap = true, silent = true, desc = "Go to the end of the line" })
+keymap.set({ "n", "v" }, "^", "0", { noremap = true, silent = true, desc = "Go to the start of the line" })
 
 -- open lsp definition
 -- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
