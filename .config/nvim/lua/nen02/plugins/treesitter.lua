@@ -21,6 +21,7 @@ return {
 				"javascript",
 				"java",
 				"typescript",
+				"jsdoc",
 				"tsx",
 				"yaml",
 				"html",

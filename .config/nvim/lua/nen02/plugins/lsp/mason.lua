@@ -35,7 +35,7 @@ return {
 				"angularls",
 				"html",
 				"cssls",
-				-- "tailwindcss",
+				"tailwindcss",
 				"svelte",
 				"lua_ls",
 				"graphql",
