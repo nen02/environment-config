@@ -59,17 +59,17 @@ return {
 		})
 
 		-- use tab to go to next node when using snippets
-		keymap.set({ "i", "s" }, "<Tab>", function()
-			if luasnip.expand_or_jumpable() then
-				luasnip.jump(1)
-			end
-		end, { silent = true })
-
-		keymap.set({ "i", "s" }, "<S-Tab>", function()
-			if luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			end
-		end, { silent = true })
+		-- keymap.set({ "i", "s" }, "<Tab>", function()
+		-- 	if luasnip.expand_or_jumpable() then
+		-- 		luasnip.jump(1)
+		-- 	end
+		-- end, { silent = true })
+		--
+		-- keymap.set({ "i", "s" }, "<S-Tab>", function()
+		-- 	if luasnip.jumpable(-1) then
+		-- 		luasnip.jump(-1)
+		-- 	end
+		-- end, { silent = true })
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
