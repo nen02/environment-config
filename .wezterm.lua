@@ -48,7 +48,7 @@ config.color_schemes = {
 }
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 12.5
+config.font_size = 12
 
 config.enable_tab_bar = false
 config.window_background_opacity = 0.92
