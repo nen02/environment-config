@@ -132,25 +132,25 @@ keymap.set("n", "<leader>go", function()
 	if vim.bo.filetype == "java" then
 		require("jdtls").organize_imports()
 	end
-end)
+end, { desc = "Organize imports" })
 
 keymap.set("n", "<leader>gu", function()
 	if vim.bo.filetype == "java" then
 		require("jdtls").update_projects_config()
 	end
-end)
+end, { desc = "Update projects config" })
 
 keymap.set("n", "<leader>tc", function()
 	if vim.bo.filetype == "java" then
 		require("jdtls").test_class()
 	end
-end)
+end, { desc = "Test class" })
 
 keymap.set("n", "<leader>tm", function()
 	if vim.bo.filetype == "java" then
 		require("jdtls").test_nearest_method()
 	end
-end)
+end, { desc = "Test nearest method" })
 
 -- Debugging
 keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
