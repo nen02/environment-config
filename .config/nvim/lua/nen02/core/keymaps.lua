@@ -40,3 +40,147 @@ keymap.set({ "n", "v" }, "^", "0", { noremap = true, silent = true, desc = "Go t
 -- open lsp definition
 -- vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
+
+-- Harpoon
+keymap.set(
+	"n",
+	"<leader>ha",
+	"<cmd>lua require('harpoon.mark').add_file()<CR>",
+	{ noremap = true, silent = true, desc = "Add file to harpoon" }
+)
+keymap.set(
+	"n",
+	"<leader>hx",
+	"<cmd>lua require('harpoon.mark').rm_file()<CR>",
+	{ noremap = true, silent = true, desc = "Remove file from harpoon" }
+)
+keymap.set(
+	"n",
+	"<leader>hh",
+	"<cmd>lua require('telescope').extensions.harpoon.marks()<CR>",
+	{ noremap = true, silent = true, desc = "List harpoon marks" }
+)
+keymap.set(
+	"n",
+	"<leader>hn",
+	"<cmd>lua require('harpoon.ui').nav_next()<CR>",
+	{ noremap = true, silent = true, desc = "Next harpoon mark" }
+)
+keymap.set(
+	"n",
+	"<leader>hp",
+	"<cmd>lua require('harpoon.ui').nav_prev()<CR>",
+	{ noremap = true, silent = true, desc = "Previous harpoon mark" }
+)
+keymap.set(
+	"n",
+	"<leader>h1",
+	"<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 1" }
+)
+keymap.set(
+	"n",
+	"<leader>h2",
+	"<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 2" }
+)
+keymap.set(
+	"n",
+	"<leader>h3",
+	"<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 3" }
+)
+keymap.set(
+	"n",
+	"<leader>h4",
+	"<cmd>lua require('harpoon.ui').nav_file(4)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 4" }
+)
+keymap.set(
+	"n",
+	"<leader>h5",
+	"<cmd>lua require('harpoon.ui').nav_file(5)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 5" }
+)
+keymap.set(
+	"n",
+	"<leader>h6",
+	"<cmd>lua require('harpoon.ui').nav_file(6)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 6" }
+)
+keymap.set(
+	"n",
+	"<leader>h7",
+	"<cmd>lua require('harpoon.ui').nav_file(7)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 7" }
+)
+keymap.set(
+	"n",
+	"<leader>h8",
+	"<cmd>lua require('harpoon.ui').nav_file(8)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 8" }
+)
+keymap.set(
+	"n",
+	"<leader>h9",
+	"<cmd>lua require('harpoon.ui').nav_file(9)<CR>",
+	{ noremap = true, silent = true, desc = "Go to harpoon mark 9" }
+)
+
+-- Filetype-specific keymaps (these can be done in the ftplugin directory instead if you prefer)
+keymap.set("n", "<leader>go", function()
+	if vim.bo.filetype == "java" then
+		require("jdtls").organize_imports()
+	end
+end)
+
+keymap.set("n", "<leader>gu", function()
+	if vim.bo.filetype == "java" then
+		require("jdtls").update_projects_config()
+	end
+end)
+
+keymap.set("n", "<leader>tc", function()
+	if vim.bo.filetype == "java" then
+		require("jdtls").test_class()
+	end
+end)
+
+keymap.set("n", "<leader>tm", function()
+	if vim.bo.filetype == "java" then
+		require("jdtls").test_nearest_method()
+	end
+end)
+
+-- Debugging
+keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
+keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
+keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
+keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
+keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
+keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
+keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
+keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
+keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
+keymap.set("n", "<leader>dd", function()
+	require("dap").disconnect()
+	require("dapui").close()
+end)
+keymap.set("n", "<leader>dt", function()
+	require("dap").terminate()
+	require("dapui").close()
+end)
+keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
+keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
+keymap.set("n", "<leader>di", function()
+	require("dap.ui.widgets").hover()
+end)
+keymap.set("n", "<leader>d?", function()
+	local widgets = require("dap.ui.widgets")
+	widgets.centered_float(widgets.scopes)
+end)
+keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
+keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
+keymap.set("n", "<leader>de", function()
+	require("telescope.builtin").diagnostics({ default_text = ":E:" })
+end)

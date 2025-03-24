@@ -85,21 +85,11 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			-- ["jdtls"] = function()
-			-- 	lspconfig["jdtls"].setup({
-			-- 		cmd = {
-			-- 			"jdtls",
-			-- 			"-data",
-			-- 			vim.fn.stdpath("data") .. "/java_workspace",
-			-- 		},
-			-- 		root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git"),
-			-- 	})
-			-- end,
 			["svelte"] = function()
 				-- configure svelte server
 				lspconfig["svelte"].setup({
 					capabilities = capabilities,
-					on_attach = function(client, bufnr)
+					on_attach = function(client)
 						vim.api.nvim_create_autocmd("BufWritePost", {
 							pattern = { "*.js", "*.ts" },
 							callback = function(ctx)
