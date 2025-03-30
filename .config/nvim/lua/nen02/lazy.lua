@@ -21,6 +21,7 @@ vim.o.foldlevel = 99 -- Start with all folds open
 vim.opt.foldtext = "v:lua.CustomFoldText()"
 vim.opt.fillchars = "fold: "
 -- vim.api.nvim_set_hl(0, "Folded", { bg = "#2e3440", fg = "#88c0d0" })
+
 function _G.CustomFoldText()
 	local line = vim.fn.getline(vim.v.foldstart) -- Get the first line of the fold
 	local lines = vim.v.foldend - vim.v.foldstart + 1 -- Number of lines in the fold

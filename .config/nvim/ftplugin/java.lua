@@ -38,13 +38,14 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
-		"-Xmx4g",
+		"-Xmx2g",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
 		"java.base/java.util=ALL-UNNAMED",
 		"--add-opens",
 		"java.base/java.lang=ALL-UNNAMED",
+		"-javaagent:" .. home .. "/.local/share/java/lombok.jar",
+		-- "-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
 
 		-- Eclipse jdtls location
 		"-jar",
@@ -54,7 +55,7 @@ local config = {
 		"-data",
 		workspace_dir,
 	},
-
+	autostart = true,
 	-- This is the default if not provided, you can remove it. Or adjust as needed.
 	-- One dedicated LSP server & client will be started per unique root_dir
 	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "pom.xml", "build.gradle" }),
