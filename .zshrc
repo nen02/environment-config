@@ -29,6 +29,11 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
+export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/java/lombok.jar"
+
+# maven
+export MAVEN_HOME=/opt/homebrew/bin/mvn
+export PATH=$MAVEN_HOME/bin:$PATH
 
 # ------------------------ terminal ------------------------
 # fzf
@@ -94,3 +99,8 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/nen02/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
