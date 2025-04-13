@@ -16,60 +16,12 @@ return {
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 	},
 	config = function()
-		local keymap = vim.keymap
 		local cmp = require("cmp")
-
 		local luasnip = require("luasnip")
-		local s = luasnip.snippet
-		local t = luasnip.text_node
-		local i = luasnip.insert_node
-
 		local lspkind = require("lspkind")
 
-		-- snippets for jsoc
-		luasnip.add_snippets("javascript", {
-			s("jsdoc-method", {
-				t({ "/**", " * " }),
-				i(1, "Description"),
-				t({ "", " * @param {" }),
-				i(2, "paramType"),
-				t({ "}" }),
-				t({ " " }),
-				i(3, "paramName"),
-				t({ "", " * @returns {" }),
-				i(4, "returnType"),
-				t({ "}" }),
-				t({ "", " */" }),
-			}),
-			s("jsdoc-type", {
-				t({ "/**" }),
-				t({ "", " * @type {" }),
-				i(1, "type"),
-				t({ "}" }),
-				t({ "", " */" }),
-			}),
-			s("jsdoc-typedef", {
-				t({ "/**" }),
-				t({ "", " * @typedef {" }),
-				i(1, "type"),
-				t({ "} " }),
-				i(2, "name"),
-				t({ "", " */" }),
-			}),
-		})
-
-		-- use tab to go to next node when using snippets
-		-- keymap.set({ "i", "s" }, "<Tab>", function()
-		-- 	if luasnip.expand_or_jumpable() then
-		-- 		luasnip.jump(1)
-		-- 	end
-		-- end, { silent = true })
-		--
-		-- keymap.set({ "i", "s" }, "<S-Tab>", function()
-		-- 	if luasnip.jumpable(-1) then
-		-- 		luasnip.jump(-1)
-		-- 	end
-		-- end, { silent = true })
+		local MAX_MENU_WIDTH = 40
+		local MAX_ABBR_WIDTH = 40
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
@@ -99,13 +51,45 @@ return {
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
-
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
-				format = lspkind.cmp_format({
-					maxwidth = 50,
-					ellipsis_char = "...",
-				}),
+				format = function(entry, vim_item)
+					-- First, apply lspkind formatting (adds icons)
+					vim_item = lspkind.cmp_format({
+						mode = "symbol_text", -- show symbol + text
+						maxwidth = 50,
+						ellipsis_char = "...",
+					})(entry, vim_item)
+
+					-- Max out abbr width
+					local abbr = vim_item.abbr
+					if #abbr > MAX_ABBR_WIDTH then
+						vim_item.abbr = abbr:sub(1, MAX_ABBR_WIDTH - 3) .. "..."
+					end
+
+					-- Then customize the menu for LSP sources
+					if entry.source.name == "nvim_lsp" then
+						local detail = entry.completion_item.detail or ""
+
+						-- Remove "Auto import from " prefix
+						detail = detail:gsub("^Auto import from ", "")
+
+						-- Remove single or double quotes around the path
+						detail = detail:gsub([['(.-)']], "%1") -- for single quotes
+						detail = detail:gsub([["(.-)"]], "%1") -- for double quotes
+
+						if #detail > 0 then
+							if #detail > MAX_MENU_WIDTH then
+								detail = detail:sub(1, MAX_MENU_WIDTH - 3) .. "..."
+							end
+							vim_item.menu = detail
+						end
+					end
+
+					return vim_item
+				end,
+				fields = { "kind", "abbr", "menu" },
+				expandable_indicator = false,
 			},
 		})
 	end,
