@@ -1,0 +1,142 @@
+[
+  {
+    "key": "ctrl+l",
+    "when": "vim.active && vim.mode == 'Normal'",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "ctrl+h",
+    "when": "vim.active && vim.mode == 'Normal'",
+    "command": "workbench.action.focusPreviousGroup"
+  },
+  {
+    "key": "space s x",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space e f",
+    "command": "workbench.view.explorer",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space e e",
+    "command": "workbench.action.closeSidebar",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space s v",
+    "command": "workbench.action.splitEditor",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space s h",
+    "command": "workbench.action.splitEditorDown",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space s m",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space s e",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space f f",
+    "command": "workbench.action.quickOpen",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space s f",
+    "command": "workbench.view.search",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space l g",
+    "command": "workbench.view.scm",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "alt+shift+j",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "alt+shift+k",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space z a",
+    "command": "editor.foldAll",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space z u",
+    "command": "editor.unfoldAll",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space z f",
+    "command": "editor.toggleFold",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closeMessages",
+    "when": "notificationFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closeEditors",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "cancelSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "cancelSelection",
+    "when": "terminalFocus"
+  }
+]

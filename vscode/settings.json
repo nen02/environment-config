@@ -1,0 +1,118 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "vsicons.dontShowNewVersionMessage": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "workbench.tree.indent": 20,
+  "editor.linkedEditing": true,
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": { "path": "C:\\Program Files\\Git\\bin\\bash.exe" }
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.fontFamily": "'JetBrainsMono NF', 'Consolas', 'Courier New', 'monospace'",
+  "redhat.telemetry.enabled": false,
+  "explorer.confirmDelete": false,
+  "editor.tabSize": 2,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.maxComputationTime": 0,
+  "cSpell.userWords": ["UUIDV"],
+  "editor.accessibilitySupport": "off",
+  "settingsSync.ignoredSettings": [],
+  "githubPullRequests.createOnPublishBranch": "never",
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "window.commandCenter": false,
+  "workbench.editorLargeFileConfirmation": 51120,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "codeium.enableConfig": {
+    "*": true,
+    "spring-boot-properties": true
+  },
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true
+  },
+  "settingsSync.ignoredExtensions": [],
+  "terminal.external.osxExec": "/usr/local/bin/wezterm",
+  "terminal.integrated.altClickMovesCursor": false,
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["J", "K"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-l>"],
+      "after": ["<Right>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<Left>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    {
+      "before": ["-"],
+      "after": ["<End>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    {
+      "before": ["-"],
+      "after": ["<End>"]
+    }
+  ],
+  "editor.lineNumbers": "relative",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 1,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.showTabs": "none",
+  "workbench.quickOpen.closeOnFocusLost": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.enablePreview": false
+}
