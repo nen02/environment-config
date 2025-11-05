@@ -33,3 +33,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 o.updatetime = 1000 -- Reduce delay for CursorHold
 o.completeopt = "menuone,noselect"
+
+-- end of line
+opt.fixeol = false
+opt.endofline = false
